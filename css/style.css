@@ -6,6 +6,7 @@ body {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: inherit;
 }
 li {
     list-style: none;
@@ -14,13 +15,20 @@ li {
 a {
     text-decoration: none;
 }
-h1{
-    font-size: 2.5em;
-    margin-bottom:20px;
+h1,h2{
+    font-size: clamp(0.9375rem, 0.3125rem + 1.3021vw, 1.875rem);
+    margin-bottom:1vw;
 }
 p{
-    font-size: 1.2em;
-    margin-bottom:15px;
+    font-size: clamp(0.5rem, 0.05rem + 0.8681vw, 1.125rem);
+    margin-bottom:0.5vw;
+}
+@media (max-width:1050px){
+    h1,h2{
+        font-size: clamp(1.25rem, -3.8564rem + 10.6383vw, 3.125rem);
+    }
+    p{font-size: clamp(0.625rem, -1.0771rem + 3.5461vw, 1.25rem);
+    }
 }
  
 
@@ -117,32 +125,36 @@ header {
     width: 100%;
 }
 
-.secondpage{
-    margin: 0 auto;
-    margin-top:50px;
-    background-color: #fff;
-    display: flex;
-    width: 100%;
-}
-.item{
-    width:30%;
-}
-.item:nth-child(1){
-    padding-left: 300px;
-}
+
 
 
 .seconditem{
-    margin-bottom:150px;
+    margin-bottom:5vw;
 }
+
+.secondpage{
+    display: flex;
+    overflow:hidden;
+    width:80%;
+    margin:3vw auto 0;
+}
+.secondpage .item h1{
+    font-size: clamp(1.25rem, 0rem + 2.6042vw, 3.125rem);
+}
+.seconditem{
+    margin-bottom:5vw;
+}
+.item:nth-child(1){
+    margin-right: 10vw;
+    margin-left: auto;
+    text-align: left; 
+    } 
 .item:nth-child(2){
-    width: 80%;
-    max-width: 800px;
-}
-.item:nth-child(2){
-    margin-bottom: 20px;
-    text-align: justify;
-}
+    text-align: left;
+} 
+
+
+
 .thirdpage{
     display: flex;
 }
@@ -150,18 +162,17 @@ header {
     width:33%;
 }
 .procedure{
-    margin-bottom:60px;
-}
-.procedure h2,.procedure p{
-    margin-bottom: 12px;
+    margin-bottom:1vw;
 }
 
 .thirditem h1{
-    margin-bottom: 40px;
+    margin-bottom: 2vw;
 }
 .thirditem:nth-child(1){
-    margin-left:100px;
+    margin-left:10vw;
 }
+
+
 .fourthpage{
     display: flex;
     justify-content: center;
@@ -173,7 +184,7 @@ header {
     display: block;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 50%;
     padding: .9em 2em;
     border: none;
     border-radius: 5px;
@@ -181,21 +192,27 @@ header {
     color: #fff;
     font-weight: 600;
     font-size: 1em;
-    margin: 70px auto 0;
+    margin: 3vw auto 0;
 }
 .button-1:hover{
     background-color: grey;
 }
 .fourthitem:nth-child(2){
-    padding-left:100px;
+    padding-left:10vw;
 }
 .fourthitem{
     width: 30%;
-    margin: 0 100px; 
+    margin: 0 auto 2vw; 
+}
+
+.fourthitem img{
+    width: 30vw;
+    height: 30vw;
 }
 /*footer*/
+
 footer{
-    padding: 30px 0;
+    padding: 1.5vw 0;
     max-width: 100%;
     background-color: black;
 }
@@ -206,3 +223,4 @@ footer p{
 footer p:nth-last-child(1){
     margin: 0 0 0 300px;
 }
+
